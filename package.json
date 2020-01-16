@@ -1,0 +1,19 @@
+{
+  "name": "nuxtlify",
+  "version": "1.0.0",
+  "description": "Nuxt and Netlify",
+  "author": "Atinux",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt-start": "^2.11.0"
+  },
+  "devDependencies": {
+    "nuxt": "^2.11.0"
+  }
+}
