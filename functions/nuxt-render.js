@@ -4,7 +4,10 @@ const { loadNuxtConfig } = require('@nuxt/cli')
 const fs = require('fs')
 
 exports.handler = async (event, context) => {
-  // console.log(event, context, callback)
+  // DEBUG
+  console.log('__dirname', __dirname)
+  console.log('files', fs.readdirSync(resolve(__dirname, '..')))
+
   const argv = { _: [resolve(__dirname, '..')], 'config-file': 'nuxt.config.js' }
   const config = await loadNuxtConfig(argv)
   // Load like nuxt start without starting a server
@@ -13,8 +16,6 @@ exports.handler = async (event, context) => {
   // Load nuxt
   const nuxt = new Nuxt(config)
   await nuxt.ready()
-
-  console.log(fs.readdirSync(resolve(__dirname, '..')))
 
   // Render a route
   const { html } = await nuxt.renderRoute('/')
