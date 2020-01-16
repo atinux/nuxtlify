@@ -1,0 +1,5 @@
+[dev]
+  command = "yarn dev" # Command to start your dev server
+  port = 3000 # Port that the dev server will be listening on
+  functionsPort = 34567 # port for functions server
+  publish = "static" # If you use a _redirect file, provide the path to your static content folder
