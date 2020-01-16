@@ -1,6 +1,7 @@
 const { resolve } = require('path')
 const { Nuxt } = require('nuxt-start')
 const { loadNuxtConfig } = require('@nuxt/cli')
+const fs = require('fs')
 
 exports.handler = async (event, context) => {
   // console.log(event, context, callback)
@@ -12,6 +13,8 @@ exports.handler = async (event, context) => {
   // Load nuxt
   const nuxt = new Nuxt(config)
   await nuxt.ready()
+
+  console.log(fs.readdirSync(resolve(__dirname, '..')))
 
   // Render a route
   const { html } = await nuxt.renderRoute('/')
